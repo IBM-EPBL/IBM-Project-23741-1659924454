@@ -17,15 +17,12 @@ port = os.getenv("PORT")
 uid = os.getenv("UID")
 password = os.getenv("PASSWORD")
 
-try:
-    conn = ibm_db.connect(
-        f"DATABASE={database_name};HOSTNAME={host_name};PORT={port};SECURITY=SSL;SSLServiceCertificate=DigiCertGlobalRootCA.crt;UID={uid};PWD={password}",'',''
-    )
-    print(conn)
-    print("connection successful...")
-except:
-    print("Connection Failed")
-    print(ibm_db.conn_error())
+
+conn = ibm_db.connect("DATABASE=bludb;HOSTNAME=0c77d6f2-5da9-48a9-81f8-86b520b87518.bs2io90l08kqb1od8lcg.databases.appdomain.cloud;PORT=31198;SECURITY=SSL;SSLServiceCertificate=DigiCertGlobalRootCA.crt;UID=qpd19118;PWD=iLbBf36ZHaCP9NG4",'','')
+print(conn)
+print("connection successful...")
+
+    
 
 
 
@@ -45,29 +42,32 @@ def forgot():
 def signup():
     if request.method == 'POST':
         # conn = connection()
-         try:
-            sql = "INSERT INTO user_data VALUES('{}','{}','{}','{}')".format(request.form["name"],request.form["email"],request.form["phone"],request.form["password"])
-            ibm_db.exec_immediate(conn,sql)
-            #flash("successfully Registered !")
-            return render_template('login.html')
-         except:
-            #flash("Account already exists! ")
-            return render_template('signup.html')
-    else:
-            return render_template('signup.html')
-        # name = request.form['name']
-         #email = request.form['email']
-         #phone = request.form['phone']
-         #password = request.form['password']
-        
-         #sql ="INSERT INTO users VALUES (?,?,?,?)"
-         #stmt = ibm_db.prepare(conn,sql)
-         #ibm_db.bind_param(stmt, 1, name)
-         #ibm_db.bind_param(stmt, 2, email)
-         #ibm_db.bind_param(stmt, 3, phone)
-         #ibm_db.bind_param(stmt, 4, password)
-         #ibm_db.execute(stmt)
-   # return render_template('signup.html')
+        name = request.form['name']
+        email = request.form['email']
+        phone = request.form['phone']
+        password = request.form['password']
+
+
+        sql="SELECT * from user_data where name=?"
+        stmt=ibm_db.prepare(conn,sql)
+        ibm_db.bind_param(stmt,1,name)
+        ibm_db.execute(stmt)
+        account=ibm_db.fetch_assoc(stmt)
+
+        if account:
+            return render_template('login.html', msg="You already have an account, please login using your credentials.")
+           
+        else:
+            sql ="INSERT INTO user_data (name,email,phone,password) VALUES (?,?,?,?)"
+            stmt = ibm_db.prepare(conn,sql)
+            ibm_db.bind_param(stmt, 1, name)
+            ibm_db.bind_param(stmt, 2, email)
+            ibm_db.bind_param(stmt, 3, phone)
+            ibm_db.bind_param(stmt, 4, password)
+            ibm_db.execute(stmt)
+    # return render_template('signup.html')
+    
+    return render_template('signup.html')
 
 @app.route('/login', methods=['POST','GET'])
 def login():
