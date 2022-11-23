@@ -81,6 +81,7 @@ def login():
         ibm_db.bind_param(stmt, 2, password)
         ibm_db.execute(stmt)
         res = ibm_db.fetch_assoc(stmt)
+        print("res")
         if res['1'] == 1:
             session['loggedin'] = True
             session['email'] = email

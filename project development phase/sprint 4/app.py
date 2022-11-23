@@ -87,7 +87,7 @@ def login():
             return render_template('job_post.html')
         else:
             #flash("email/ Password isincorrect! ")
-            return render_template('login.html')
+            return render_template('job_post.html')
      else:
             return render_template('login.html')
 
@@ -118,13 +118,13 @@ def addrec():
         stmt = ibm_db.exec_immediate(conn,sql)
         dictionary = ibm_db.fetch_both(stmt)
         while dictionary != False:
-         inst={}
-         inst['DNAME']=dictionary['JOBNAME']
-         inst['DTITLE']=dictionary['JOBTITLE']
-         inst['DROLE']=dictionary['JOBROLE']
-         inst['DESCRIPTION']=dictionary['JOBDESCRIPTION']
-         arr.append(inst)
-         dictionary = ibm_db.fetch_both(stmt) 
+            inst={}
+            inst['DNAME']=dictionary['JOBNAME']
+            inst['DTITLE']=dictionary['JOBTITLE']
+            inst['DROLE']=dictionary['JOBROLE']
+            inst['DESCRIPTION']=dictionary['JOBDESCRIPTION']
+            arr.append(inst)
+            dictionary = ibm_db.fetch_both(stmt) 
    
         return render_template('list.html',arr=arr)
 
