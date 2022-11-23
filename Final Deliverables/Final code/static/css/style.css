@@ -11,7 +11,7 @@
 }
 
 header{
-    background:url("../img/Back_img1.jpg");
+    background: url("../img/back_img.png") ;
     height: 125vh;
     -webkit-background-size: cover;
     background-size: cover;
@@ -33,20 +33,20 @@ header{
 }
 
 .nav-area li a{
-    color: rgb(218, 189, 61);
+    color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 5px 25px;
     border-radius: 15px;
     font-family:'Arial';
     font-size: large;
     font-weight: bolder;
-    background: rgb(67, 9, 9) ;
+    background: rgb(255, 194, 39);
     
 }
 
 .nav-area li a:hover{
-    background:  rgb(218, 189, 61);
-    color: rgb(67, 9, 9) ;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255) ;
     
    
 }
@@ -75,8 +75,8 @@ header{
 }
 
 .welcome-txt h1{
-    text-align: right;
-    color: rgb(67, 9, 9) ;
+    text-align: center;
+    color: rgb(250, 205, 58);
     text-transform:uppercase;
     font-size: 60px;
     margin-bottom: 20px;
@@ -84,11 +84,11 @@ header{
 }
 
 .welcome-txt h1:hover{
-    color:  rgb(218, 189, 61);
+    color: rgb(6, 221, 245) ;
 }
 
   #contact{
-    border: 1px solid  rgb(218, 189, 61);
+    border: 1px solid black;
     padding: 7px 25px;
     text-decoration: none;
     text-transform: uppercase;
@@ -97,13 +97,13 @@ header{
     margin-top: 20px;
     font-weight: bolder;
     color: rgb(0, 0, 0);
-    background:rgb(230, 80, 10);
+    background:rgb(18, 249, 2);
     border-radius: 20px;
     cursor: pointer;
 }
 
     #sign{ 
-    border: 1px solid  rgb(218, 189, 61);
+    border: 1px solid black;
     padding: 7px 25px;
     text-decoration: none;
     text-transform: uppercase;
@@ -130,7 +130,7 @@ footer {
     height: 300px;
 	left: 0;
 	bottom: 0;
-	background-color: rgb(67, 9, 9) ;
+	background-color: rgb(250, 203, 14);
 }
 
  .intro h5{
@@ -161,7 +161,7 @@ footer {
     grid-template-columns: auto auto auto;
     margin: 20px 200px;
     gap: 20px;
-    background-color: rgb(244, 70, 6);
+    background-color: rgb(6, 121, 244);
     padding: 25px;
     position: relative;
     height: 260px;
@@ -173,12 +173,12 @@ footer {
     text-align: center;
     padding: 50px 0;
     font-size: 20px;
-    color: rgb(218, 189, 61);
+    color: rgb(0, 0, 0);
   }
 
 #start{
     height: 2.5px;
-    background-color: rgb(244, 58, 6);
+    background-color: rgb(6, 121, 244);
 }
 
 
@@ -191,17 +191,17 @@ footer {
 	bottom: 0;
     margin-top: 5px;
     margin-bottom: 5px;
-	background-color: rgb(244, 62, 6);
+	background-color: rgb(6, 121, 244);
 }
 
 .job-sign h1 {
     font-size: 37.5px;
     align-items: center;
     margin-left: 500px;
-    color:rgb(67, 9, 9) ;
+    color: rgb(255, 196, 0);
 }
 #sign-center{
-    border: 0px solid rgb(244, 62, 6);
+    border: 0px solid  rgb(6, 121, 244);
     padding: 12.5px 0px;
     text-decoration: none;
     text-transform: uppercase;
@@ -211,8 +211,8 @@ footer {
     margin-left: 745px;
     font-weight: bolder;
     cursor: pointer;
-    color: rgb(218, 189, 61);
-    background:rgb(67, 9, 9) ;
+    color: rgb(0, 0, 0);
+    background:rgb(251, 202, 4);
     border-radius: 20px;
 }
 

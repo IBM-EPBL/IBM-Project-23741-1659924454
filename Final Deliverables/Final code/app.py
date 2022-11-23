@@ -81,13 +81,14 @@ def login():
         ibm_db.bind_param(stmt, 2, password)
         ibm_db.execute(stmt)
         res = ibm_db.fetch_assoc(stmt)
+        print("res")
         if res['1'] == 1:
             session['loggedin'] = True
             session['email'] = email
             return render_template('job_post.html')
         else:
             #flash("email/ Password isincorrect! ")
-            return render_template('job_post.html')
+            return render_template('login.html')
      else:
             return render_template('login.html')
 
@@ -118,13 +119,13 @@ def addrec():
         stmt = ibm_db.exec_immediate(conn,sql)
         dictionary = ibm_db.fetch_both(stmt)
         while dictionary != False:
-            inst={}
-            inst['DNAME']=dictionary['JOBNAME']
-            inst['DTITLE']=dictionary['JOBTITLE']
-            inst['DROLE']=dictionary['JOBROLE']
-            inst['DESCRIPTION']=dictionary['JOBDESCRIPTION']
-            arr.append(inst)
-            dictionary = ibm_db.fetch_both(stmt) 
+         inst={}
+         inst['DNAME']=dictionary['JOBNAME']
+         inst['DTITLE']=dictionary['JOBTITLE']
+         inst['DROLE']=dictionary['JOBROLE']
+         inst['DESCRIPTION']=dictionary['JOBDESCRIPTION']
+         arr.append(inst)
+         dictionary = ibm_db.fetch_both(stmt) 
    
         return render_template('list.html',arr=arr)
 

@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+  
 }
 
 
@@ -8,11 +9,10 @@
     width: 100%;
     height: 80px;
     
-    
 }
 
 header{
-    background:url("../img/Back_img1.jpg");
+    background: url("../img/back_img.png") ;
     height: 125vh;
     -webkit-background-size: cover;
     background-size: cover;
@@ -224,7 +224,7 @@ footer {
 
 .intro h5 a{
     text-decoration: none;
-    color: rgb(244, 62, 6);
+    color: rgb(33, 4, 252);
     font-weight: bold;
     
 }
@@ -240,7 +240,7 @@ footer {
     grid-template-columns: auto auto auto;
     margin: 20px 200px;
     gap: 20px;
-    background-color: rgb(244, 62, 6);
+    background-color: rgb(6, 121, 244);
     padding: 25px;
     position: relative;
     height: 260px;
@@ -257,7 +257,7 @@ footer {
 
 #start{
     height: 2.5px;
-    background-color:rgb(244, 62, 6);
+    background-color: rgb(6, 121, 244);
 }
 .job-sign{
     width: 100%;
@@ -266,7 +266,7 @@ footer {
 	bottom: 0;
     margin-top: 5px;
     margin-bottom: 5px;
-	background-color: rgb(244, 62, 6);
+	background-color: rgb(6, 121, 244);
 }
 
 .job-sign h1 {
@@ -276,7 +276,7 @@ footer {
     color: rgb(255, 196, 0);
 }
 #sign-center{
-    border: 0px solid rgb(244, 62, 6);
+    border: 0px solid  rgb(6, 121, 244);
     padding: 12.5px 0px;
     text-decoration: none;
     text-transform: uppercase;
